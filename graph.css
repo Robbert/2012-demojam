@@ -1,0 +1,187 @@
+html {
+  background-color: rgb(48, 86, 141);
+  background-image: -moz-radial-gradient(circle, rgb(81, 110, 158) 0%, rgb(48, 86, 141) 100%);
+  background-image: -webkit-radial-gradient(circle, rgb(81, 110, 158), rgb(48, 86, 141));
+  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+article
+{
+  text-shadow: 0 1px 3px black;
+  width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+article h1
+{
+  font-size: 2em;
+  font-weight: normal;
+}
+
+#graph
+{
+  text-shadow: none;
+}
+
+math
+{
+  font-size: 1.6em;
+  text-align: left;
+  margin-left: 7em;
+}
+
+.axis {
+  font-size: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.z-axis {
+  border-left: 1px solid white;
+  bottom: 0;
+  left: 100%;
+  margin-top: -100%;
+}
+.axis {
+  position: absolute;
+}
+.axis > li,
+.x-axis > li,
+.y-axis > li,
+.z-axis > li {
+  height: 1px;
+  border-left: 10px solid white;
+  margin: 10px 0;
+  line-height: 1px;
+  padding: 0 0 0 5px;
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotateZ(0deg); }
+  to   { -webkit-transform: rotateZ(360deg); }
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotateZ(0deg); }
+  to   { -moz-transform: rotateZ(360deg); }
+}
+
+.grid {
+  position: absolute;
+}
+.grid {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+.square {
+  display: block;
+  width: 30px; height: 30px;
+  background: rgba(241, 211, 9, 0.3);
+/*  opacity: 0.3;*/
+  border: 2px solid rgba(241, 211, 9, 0.5);
+  
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.graph
+{
+    position: relative;
+    margin: 0 auto;
+/*    float: left;*/
+}
+.ajaxorggraph
+{
+    width: 640px;
+    height: 260px;
+/*    background: #1b76bf;*/
+    color: white;
+    font-family: "Arial", sans-serif;
+    
+}
+.graph3d
+{
+  -webkit-perspective: 1200;
+  -webkit-transform-style: preserve-3d;
+  -moz-perspective: 1200;
+  -moz-transform-style: preserve-3d;
+  -ms-perspective: 1200;
+  -ms-transform-style: preserve-3d;
+/*  overflow: hidden;*/
+  -moz-transition: -moz-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+}
+.graph3d .graph-content
+{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(64deg);
+    -moz-transform-style: preserve-3d;
+    -moz-transform: rotateX(64deg);
+    -ms-transform-style: preserve-3d;
+    -ms-transform: rotateX(64deg);
+}
+.graph3d .square
+{
+    -webkit-transform: translateZ(20px);
+    -moz-transform: translateZ(20px);
+    -ms-transform: translateZ(20px);
+    cursor: pointer;
+/*  -webkit-transform: translateZ(-100px) rotateY(45deg);*/
+}
+.graph3d .grid
+{
+  -webkit-animation: spin 20s infinite linear;
+  -webkit-transform-style: preserve-3d;
+/*  -moz-animation: spin infinite linear;*/
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+.graph3d .z-axis {
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    text-align: left;
+}
+
+
+.debug .graph3d .graph-content
+{
+    -webkit-transform: rotateX(88deg);
+    -moz-transform: rotateX(88deg);
+    -ms-transform: rotateX(88deg);
+}
+.graph3d .grid
+{
+  -moz-transform: rotateZ(22deg);
+  -webkit-transform: rotateZ(22deg);
+  -ms-transform: rotateZ(22deg);
+}
+
+.square:hover
+{
+  border-color: red;
+}
+#square-selected,
+.square:focus
+{
+  border-color: red;
+  background: rgb(241, 211, 211);
+}
+
+#fps
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
